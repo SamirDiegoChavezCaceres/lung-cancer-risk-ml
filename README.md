@@ -1,33 +1,32 @@
 # lung-cancer-risk-ml
 
 Predicting lung cancer risk from a lifestyle questionnaire with machine
-learning - the code and materials behind our paper:
+learning. This is the code behind our conference paper:
 
-> **Prediction of Lung Cancer Risk through Machine Learning based on Lifestyle
+> **Prediction of Lung Cancer Risk Through Machine Learning Based on Lifestyle
 > Questionnaire Data.**
-> Samir Diego Chávez Cáceres, Angel Eduardo Hincho Jove, Maribel Molina
-> (Universidad Nacional de San Agustín, UNSA), Aurea Soriano-Vargas
-> (Universidade Estadual de Campinas, UNICAMP). Published in IEEE Xplore.
->
-> 📄 IEEE Xplore: `<add DOI / link>` · see [`paper/`](paper/) for the manuscript and poster.
+> S. Chavez-Caceres, A. Hincho-Jove, E. Castro-Gutierrez, A. Soriano-Vargas.
+> 2024 IEEE International Conference on Automation / XXVI Congress of the Chilean
+> Association of Automatic Control (ICA-ACCA), Santiago, Chile, 2024.
+> DOI: [10.1109/ICA-ACCA62622.2024.10766818](https://doi.org/10.1109/ICA-ACCA62622.2024.10766818)
+> · [IEEE Xplore](https://ieeexplore.ieee.org/document/10766818)
 
 ## What it does
 
-Lung cancer is the leading cause of cancer mortality worldwide. This work
-explores a low-cost, questionnaire-based screening aid: given lifestyle and
-symptom answers (smoking, anxiety, chronic disease, wheezing, ...), classify
-whether a person is at risk, with the model's reasoning made inspectable.
+Lung cancer is the leading cause of cancer mortality worldwide. This work tests
+a low-cost screening aid: from lifestyle and symptom answers (smoking, anxiety,
+chronic disease, wheezing, and so on), classify whether a person is at risk, and
+expose why the model decided that way.
 
 Pipeline:
 
-1. **EDA** - univariate and multivariate analysis of the questionnaire data.
-2. **Imbalance handling** - the positive class is over-represented, so the
-   minority class is balanced with **SMOTE**.
-3. **Models** - Logistic Regression, SVC, Decision Tree, Random Forest, a Keras
-   neural net, and **XGBoost** (the proposed model), tuned with
-   **GridSearchCV** on a 70/30 split.
-4. **Explainability** - **LIME** for local, per-prediction interpretability, so
-   a risk score comes with the factors that drove it.
+1. **EDA** of the questionnaire data (univariate and multivariate).
+2. **SMOTE** to balance the under-represented class.
+3. Compare Logistic Regression, SVC, Decision Tree, Random Forest, a Keras
+   neural net, and **XGBoost** (the chosen model), tuned with **GridSearchCV**
+   on a 70/30 split.
+4. **LIME** for per-prediction explanations, so a risk score comes with the
+   factors behind it.
 
 ## Results (from the paper)
 
@@ -36,21 +35,17 @@ Pipeline:
 | Dataset 1 | 96.50% | 96.50% | 96.51% | 96.51% |
 | Dataset 2 | 95.83% | 95.83% | 96.27% | 95.83% |
 
-Model: XGBoost, after SMOTE balancing and GridSearchCV tuning.
-
 ## Repository
 
 ```
 notebooks/
   01_eda_and_models.ipynb        # EDA + model comparison
   02_survey_dataset_models.ipynb # second dataset (Kaggle "survey lung cancer")
-paper/
-  lung-cancer-risk-ml-paper.pdf  # authors' manuscript
-  poster.pdf                     # conference poster
-data/README.md                   # how to get the datasets (not redistributed)
+data/README.md                   # where to get the datasets (not redistributed)
+paper/README.md                  # link to the published paper
 ```
 
-The notebooks were authored on Google Colab (paths like `/content/...`); point
+The notebooks were written on Google Colab (paths like `/content/...`); point
 the `read_csv` calls at your local copy of the data (see [`data/`](data/)).
 
 ## Reproduce
@@ -64,17 +59,16 @@ jupyter lab
 ## Citation
 
 ```bibtex
-@inproceedings{chavez_lung_cancer_ml,
-  title     = {Prediction of Lung Cancer Risk through Machine Learning based on Lifestyle Questionnaire Data},
-  author    = {Ch\'avez C\'aceres, Samir Diego and Hincho Jove, Angel Eduardo and Molina, Maribel and Soriano-Vargas, Aurea},
-  booktitle = {IEEE Xplore},
-  year      = {<add year>},
-  note      = {DOI: <add>}
+@inproceedings{chavezcaceres2024lungcancer,
+  title     = {Prediction of Lung Cancer Risk Through Machine Learning Based on Lifestyle Questionnaire Data},
+  author    = {Chavez-Caceres, Samir and Hincho-Jove, Angel and Castro-Gutierrez, Eveling and Soriano-Vargas, Aurea},
+  booktitle = {2024 IEEE International Conference on Automation/XXVI Congress of the Chilean Association of Automatic Control (ICA-ACCA)},
+  year      = {2024},
+  doi       = {10.1109/ICA-ACCA62622.2024.10766818},
 }
 ```
 
 ## License
 
-Code is released under the MIT License (see [LICENSE](LICENSE)). The paper and
-poster in [`paper/`](paper/) are the authors' work; see [`paper/README.md`](paper/README.md)
-for reuse and the IEEE copyright note.
+Code is under the MIT License (see [LICENSE](LICENSE)). The paper is published by
+IEEE; read it on [IEEE Xplore](https://ieeexplore.ieee.org/document/10766818).
