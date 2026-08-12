@@ -1,5 +1,7 @@
 # lung-cancer-risk-ml
 
+[![Paper](https://img.shields.io/badge/paper-IEEE%20Xplore-00629B.svg)](https://ieeexplore.ieee.org/document/10766818) ![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 Predicting lung cancer risk from a lifestyle questionnaire with machine
 learning. This is the code behind our conference paper:
 
