@@ -72,6 +72,15 @@ jupyter lab
 }
 ```
 
+## Limitations and next steps
+
+- The datasets are small lifestyle questionnaires, so the results may not
+  generalize beyond that population.
+- The notebooks were written on Colab; local runs need the `read_csv` paths
+  adjusted.
+- Next: external validation on an independent cohort, and calibration of the
+  predicted probabilities.
+
 ## License
 
 Code is under the MIT License (see [LICENSE](LICENSE)). The paper is published by
