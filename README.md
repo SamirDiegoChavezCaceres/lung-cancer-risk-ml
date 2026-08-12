@@ -42,7 +42,9 @@ notebooks/
   01_eda_and_models.ipynb        # EDA + model comparison
   02_survey_dataset_models.ipynb # second dataset (Kaggle "survey lung cancer")
 data/README.md                   # where to get the datasets (not redistributed)
-paper/README.md                  # link to the published paper
+paper/
+  lung-cancer-risk-ml-accepted.pdf  # authors' accepted manuscript
+  README.md                         # citation + IEEE notice
 ```
 
 The notebooks were written on Google Colab (paths like `/content/...`); point
